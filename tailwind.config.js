@@ -13,6 +13,14 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontFamily: {
+      'poppins': ['Poppins']
+    },
+    colors: {
+      'white': '#D9D9D9',
+      'blue': '#032859',
+      'black': '#070707',
+    },
     screens: {
       devices: "536px",
     },

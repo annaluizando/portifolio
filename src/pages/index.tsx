@@ -13,6 +13,8 @@ import ts from "@assets/techs/ts.svg";
 import ps from "@assets/techs/ps.svg";
 import react from "@assets/techs/react.svg";
 import scss from "@assets/techs/scss.svg";
+import tailwind from "@assets/techs/tailwindcss.svg";
+import storybook from "@assets/techs/storybook.svg";
 import form from "@assets/form1.svg";
 import form2 from "@assets/form2.svg";
 import Head from "next/head";
@@ -22,9 +24,8 @@ const font = Poppins({ weight: ["400", "600", "700"], subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={`overflow-x-hidden flex min-h-screen min-w-screen flex-col items-center justify-between ${font.className}`}
+      className={`overflow-x-hidden flex min-h-screen min-w-screen flex-col items-center justify-between scroll-smooth snap-mandatory snap-y ${font.className}`}
     >
-
       <Head>
         <title>Portifolio</title>
         <meta name="description" content="Front-End dev portifolio"></meta>
@@ -37,7 +38,7 @@ export default function Home() {
         className="max-[1215px]:hidden  min-[1215px]:absolute -right-0"
       ></Image>
 
-      <div className="h-[900px] w-9/12 flex flex-col justify-between mt-8">
+      <div className="h-[615px] w-9/12 flex flex-col justify-between mt-8">
         <NavBar></NavBar>
         <div className="z-10 w-full max-w-5xl items-center justify-between text-xs lg:flex">
           <h1 className="font-medium text-6xl border-r- whitespace-nowrap">
@@ -50,7 +51,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="AboutMe" className="h-[1500px] w-10/12 flex justify-center items-center">
+      <div
+        id="AboutMe"
+        className="snap-center h-[1500px] w-10/12 flex justify-center items-center"
+      >
         <div className="flex flex-col w-[617px] h-[371px] items-center text-justify">
           <p>
             I always liked things related to design world and so i started my
@@ -58,33 +62,159 @@ export default function Home() {
             systems analysis and development undergraduate course in the
             beginning of 2022. Since then i started to get excited with the area
             of programming and each day, when i see what coding can do i get
-            more excited.<br/>Here you can see some of the technologies that im
-            exploring and projects!
+            more excited.
+            <br />
+            Here you can see some of the technologies that im exploring and
+            projects!
           </p>
         </div>
       </div>
 
-      <div id="Projects" className="h-[1500px] w-10/12">
+      <div
+        id="Projects"
+        className="snap-start h-[1500px] w-10/12 mb-10 grid justify-center justify-items-start"
+      >
         <h1 className="text-xl font-medium w-[250px]">
           check out some of my (loved) works:
         </h1>
 
-        <div></div>
+        <div className="grid grid-cols-2 gap-6 w-[1220px]">
+          <div className="w-[571px] h-[414px] border-white border-4 rounded-lg"></div>
+          <div className="w-[571px] h-[414px] border-white border-4 rounded-lg"></div>
+          <div className="w-[571px] h-[414px] border-white border-4 rounded-lg"></div>
+          <div className="w-[571px] h-[414px] border-white border-4 rounded-lg"></div>
+          <div className="w-[571px] h-[414px] border-white border-4 rounded-lg"></div>
+          <div className="w-[571px] h-[414px] border-white border-4 rounded-lg"></div>
+        </div>
 
-        <div id="Technologies" className="flex">
-          <Image alt="html" src={html}></Image>
-          <Image alt="css" src={css}></Image>
-          <Image alt="javascript" src={js} width={45} height={45}></Image>
-          <Image alt="typescript" src={ts} width={45} height={45}></Image>
-          <Image alt="react" src={react} width={45} height={45}></Image>
-          <Image alt="scss" src={scss} width={45} height={45}></Image>
-          <Image alt="figma" src={figma} width={45} height={45}></Image>
-          <Image alt="photoshop" src={ps} width={45} height={45}></Image>
+        <div id="Technologies" className="flex w-4/5 justify-between">
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="html"
+              src={html}
+              className="hover:skew-y-6 ease-in-out duration-1000 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-1">
+              HTML
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="css"
+              src={css}
+              className="hover:ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-1">
+              CSS
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image alt="javascript" src={js} width={45} height={45} />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-2">
+              JavaScript
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="typescript"
+              src={ts}
+              width={45}
+              height={45}
+              className="hover:skew-y-6 ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-2">
+              TypeScript
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="react"
+              src={react}
+              width={45}
+              height={45}
+              className="hover:skew-y-6 ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-2">
+              React
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="scss"
+              src={scss}
+              width={45}
+              height={45}
+              className="hover:skew-y-6 ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-2">
+              SCSS
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="tailwind"
+              src={tailwind}
+              width={45}
+              height={45}
+              className="hover:skew-y-6 ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-2">
+              Tailwind CSS
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="storybook"
+              src={storybook}
+              width={45}
+              height={45}
+              className="hover:skew-y-6 ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-2">
+              Storybook
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="figma"
+              src={figma}
+              width={45}
+              height={45}
+              className="hover:skew-y-6 ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out group-hover:duration-1000 left-[100px] text-gray-700 font-medium text-2xl ml-2">
+              Figma
+            </p>
+          </div>
+
+          <div className="relative group flex content-center items-center">
+            <Image
+              alt="photoshop"
+              src={ps}
+              width={45}
+              height={45}
+              className="hover:skew-y-6 ease-in-out duration-700 hover:scale-110"
+            />
+            <p className="hidden group-hover:block group-hover:ease-in-out left-[50px] text-gray-700 font-medium text-2xl ml-2">
+              Photoshop
+            </p>
+          </div>
         </div>
       </div>
 
-      <div id="Contact" className="h-[1024px] w-10/12 grid content-center">
-        <div className="h-[478px] flex justify-center items-center">
+      <div
+        id="Contact"
+        className="snap-center h-[780px] w-10/12 mt-20 grid content-center"
+      >
+        <div className="h-[500px] flex justify-center items-center">
           <div className="grid h-96">
             <h1 className="text-5xl	font-medium w-[550px]">
               Liked my projects and want to work with me?
